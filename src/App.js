@@ -32,8 +32,9 @@ function App() {
     {
       글제목.map(function(a,i){
         return (
-        <div className='list' key='i'>
-        <h4 onClick={()=>{setmodal(true); settitle(i);}}>{글제목[i]} <span onClick={()=>{let copy=[...따봉]; 
+        <div className='list' key={i}>
+        <h4 onClick={()=>{setmodal(true); settitle(i);}}>{글제목[i]} 
+        <span onClick={()=>{let copy=[...따봉]; 
           copy[i]=copy[i]+1; 따봉변경(copy)}}>좋아요 😀
         </span> {따봉[i]} </h4>
         <p onClick={()=>{setmodal(false)}}>2월 17일 발행</p>
@@ -47,7 +48,7 @@ function App() {
       <input type='text' onChange={(e)=>{입력값변경(e.target.value)}}></input>
       <button onClick={(e)=>{let copy= [...글제목]; copy.unshift(입력값); 글제목변경(copy);}}>추가</button>
     </div>
-  );
+  )
 }
 
 const Modal = (props)=>{ return(
@@ -59,18 +60,6 @@ const Modal = (props)=>{ return(
   </div>
 )
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
